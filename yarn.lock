@@ -1582,6 +1582,11 @@
   dependencies:
     redux-thunk "*"
 
+"@types/spotify-api@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@types/spotify-api/-/spotify-api-0.0.3.tgz#b683476ad29d01cfce95bd3506c2c3aaa5c46b66"
+  integrity sha512-NV8GATMh2LmCqkODeuNQMYppOluthRdaJVfgLUrDX81azPGBRfE2Q75gwhaMJKbLN7U5c5/dMVPEMtG34+Mupg==
+
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"

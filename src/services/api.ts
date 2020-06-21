@@ -46,7 +46,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   response =>
     // Do something with response data
-    response.data,
+    response,
   error =>
     // Do something with response error
     Promise.reject(errorMessage(error))

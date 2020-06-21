@@ -40,14 +40,16 @@ export function generatePlaylist(uris: string[], playlistName: string): Thunk {
     dispatch(Actions.generatingPlaylist(true))
     userService
       .get()
-      .then((user: any) => {
+      .then(response => {
+        const user: SpotifyApi.CurrentUsersProfileResponse = response.data
         userId = user.id
         return playlistService.create(userId, {
           name: playlistName,
           description: `Generated with ${siteName}`,
         })
       })
-      .then((playlist: any) => {
+      .then(response => {
+        const playlist: SpotifyApi.CreatePlaylistResponse = response.data
         playlistUri = playlist.external_urls.spotify
         return playlistService.addTracks(userId, playlist.id, {
           uris,
@@ -57,7 +59,7 @@ export function generatePlaylist(uris: string[], playlistName: string): Thunk {
         window.open(playlistUri)
         dispatch(Actions.clearInputValue())
       })
-      .catch((err: any) => {
+      .catch(err => {
         dispatch(Actions.generatingPlaylist(false))
         dispatch(Actions.errorFetching(`${err} try again later`))
       })
@@ -75,7 +77,7 @@ export function fetchTracks(playlistName: string, idx: number): Thunk {
     if (playlistNameLastCh && playlistNameLastCh !== ' ') {
       dispatch(Actions.tracksBeingFetched(true))
       getSearchService(playlistNameLastCh)
-        .then((track: any) => {
+        .then((track: SpotifyApi.TrackObjectFull) => {
           const newTrack = {
             title: track.name,
             artist: track.artists[0].name,
@@ -104,11 +106,12 @@ export function fetchTracks(playlistName: string, idx: number): Thunk {
 }
 
 async function getSearchService(playlistNameLastCh: string) {
-  let track
+  let track: SpotifyApi.TrackObjectFull
   do {
     try {
-      const response: any = await searchService.get(playlistNameLastCh)
-      track = response.tracks.items.find(track => track.name[0] === playlistNameLastCh.toUpperCase())
+      const response = await searchService.get(playlistNameLastCh)
+      const data: SpotifyApi.TrackSearchResponse = response.data
+      track = data.tracks.items.find(track => track.name[0] === playlistNameLastCh.toUpperCase())
     } catch (error) {
       console.log('error fetching track', error)
     }
