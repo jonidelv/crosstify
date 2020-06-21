@@ -41,10 +41,9 @@ export function generatePlaylist(uris: string[], playlistName: string): Thunk {
     userService
       .get()
       .then((user: any) => {
-        console.log('user', user)
         userId = user.id
         return playlistService.create(userId, {
-          name: getState().create.playlistName,
+          name: playlistName,
           description: `Generated with ${siteName}`,
         })
       })
