@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/crosstify/precache-manifest.f80e056d5ccba9a0edd159aec668fd76.js"
+  "/crosstify/precache-manifest.34d734f823a1f66ca8348a79882f891f.js"
 );
 
 self.addEventListener('message', (event) => {
