@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fec228cf6c9c025dfc781856a0a31fd4",
+    "revision": "52bb6a708994d78db5251b4841362b37",
     "url": "/crosstify/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crosstify/static/js/2.3f1487e3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5c5f85c623fff00c1912",
-    "url": "/crosstify/static/js/main.5529ac2c.chunk.js"
+    "revision": "507247714c135925862f",
+    "url": "/crosstify/static/js/main.43adc375.chunk.js"
   },
   {
     "revision": "b163fd20aae244cd53a8",
