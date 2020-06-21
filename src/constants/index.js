@@ -1,5 +1,5 @@
 export const tokenType = {
-  clientCredentialsFlow : 'Client Credentials Flow',
+  clientCredentialsFlow: 'Client Credentials Flow',
   implicitGrantFlow: 'Implicit Grant Flow',
 }
 
@@ -17,7 +17,7 @@ export const apiEndpoints = {
 
 export const sites = {
   dev: 'http://localhost:3000',
-  prod: 'https://jonidelv.github.io/spotifyCP',
+  prod: 'https://jonidelv.github.io/crosstify',
 }
 
 export const palette = {
